@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <div th:each="job: ${jobs}">
+        <hr />
+        <div th:each="field : ${job}">
+            <span th:text="${field.key}"></span>
+            <span th:text="${field.value}"></span>
+        </div>
+
+    </div>
+
+    <!-- TODO #3 - Use the same list display from search.html -->
+
+</div>
+
+</body>
+</html>
